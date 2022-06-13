@@ -1,0 +1,404 @@
+
+
+* {
+    margin: .5rem;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 10px;
+    
+}
+
+.socialMedia {
+    grid-column: 6 / -1;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-items: center;
+    margin: 0;
+}
+
+.socialMedia .icon{
+    position: relative;
+    background-color: rgb(201, 201, 201);
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    display: inline-block;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #333;
+    text-decoration: none;
+}
+
+.socialMedia .tooltip {
+    position: absolute;
+    top: 0;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socialMedia .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socialMedia .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.socialMedia .icon:hover span,
+.socialMedia .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.socialMedia .facebook:hover,
+.socialMedia .facebook:hover .tooltip,
+.socialMedia .facebook:hover .tooltip::before {
+    background-color: #3b5999;
+    color: #ffffff;
+}
+.socialMedia .twitter:hover,
+.socialMedia .twitter:hover .tooltip,
+.socialMedia .twitter:hover .tooltip::before {
+    background-color: #46c1f6;
+    color: #ffffff;
+}
+.socialMedia .instagram:hover,
+.socialMedia .instagram:hover .tooltip,
+.socialMedia .instagram:hover .tooltip::before {
+    background-color: #e1306c;
+    color: #ffffff;
+}
+.socialMedia .youtube:hover,
+.socialMedia .youtube:hover .tooltip,
+.socialMedia .youtube:hover .tooltip::before {
+    background-color: #de463b;
+    color: #ffffff;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(70, 70, 70); 
+    border-radius: 0px;
+    
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(33, 33, 33); 
+    border-radius: 0px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:rgb(33, 33, 33); 
+  } 
+
+html {
+    border-radius: 0px;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100px 1fr repeat(4, minmax(auto, 280px)) 1fr 100px;
+    border-radius: 0px;
+    background-image: linear-gradient(to bottom right, 
+    rgb(17, 17, 26), rgb(23, 21, 32));
+    margin: 1.2rem;
+}
+
+header {
+    grid-column: 1 /-1;
+    grid-row: 1/2;
+    margin-left: 0px;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(201, 201, 201);
+    font-family:'OCR A', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 10px;
+    transition: .4s ease-in-out;
+}
+
+header a:hover {
+    background-color:rgb(201, 201, 201);
+    color: rgb(17, 17, 26) ;
+}
+
+nav {
+    grid-column: 1/2;
+    grid-row: 1 / 2;
+    background-color: rgb(72, 72, 72);
+    box-shadow: 10px 15px 15px black;
+}
+
+.dropDown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropDown, .dropDownButton {
+    width: 80px;
+    height: 50px;
+}
+
+.dropDown > a {
+    margin: 0%;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 10px 15px 15px black;
+}
+
+.dropDownButton {
+    font-size: 16px;
+    color: black;
+    background-color: rgb(201, 201, 201);
+    margin: 0;
+    font-family:'OCR A', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: .4s ease-in-out;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropDownContent {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(to bottom right, 
+    rgb(201, 201, 201), rgb(187, 187, 187));
+    min-width: 160px;
+    margin: 0;
+}
+
+.dropDownContent a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: .5s;
+    font-family: 'OCR A', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+.dropDownButton:hover {
+    background-color:rgb(66, 66, 66);
+    color: rgb(240, 240, 240);
+}
+
+.dropDownContent a:hover {
+    background-color: rgb(66, 66, 66);
+    color: rgb(240, 240, 240)
+}
+
+.topBox {
+    grid-column: 2/8;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+iframe {
+    box-shadow: 0 0 15px 15px rgba(9, 9, 9);
+}
+
+.topBox  .bookRecommend> div {
+    padding: 10px 10px;
+    margin: 0;
+}
+
+.bookRecommend {
+    display: flex;
+}
+
+[class^="bookImage"] {
+    margin: 0;
+}
+
+[class^="bookBox"] a {
+    margin: 0;
+}
+
+[class^="bookBox"] {
+    width: auto;
+    height: 370px;
+    box-shadow: 10px 15px 15px black;
+    background-color: rgb(66, 66, 66);
+    transition: .4s ease-in-out;
+}
+
+[class^="bookContent"] {
+    overflow: auto;
+    height: 370px;
+    display: block;
+    visibility: hidden;
+    width: 0px;
+    transition: width 1.2s;
+    box-shadow: 10px 15px 15px black;
+    background-image: linear-gradient(to bottom right, 
+    rgb(201, 201, 201), rgb(187, 187, 187));
+    box-shadow: 10px 15px 15px black;
+    margin-top: 100px;
+    color: black;
+}
+
+[class^="bookContent"] p {
+    font-size: medium;
+}
+
+[class^="bookContent"] a {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+[class^="bookContent"] button {
+    padding: 5px 5px;
+    background-color: rgb(17, 17, 26);
+    border: none;
+}
+
+[class^="bookContent"] button:hover {
+    background-color: rgb(66, 66, 66);
+}
+
+[class^="bookContent"] button:hover > a {
+    color: rgb(255, 255, 255);
+}
+
+[class^="bookBox"]:hover {
+    background-color: rgb(171, 171, 171);
+}
+
+main {
+    grid-column: 2/8;
+    grid-row: 3/4;
+    background-image: linear-gradient(to bottom right, rgb(187, 187, 187), rgb(171, 171, 171));
+    box-shadow: 10px 15px 15px black;
+    margin-top: 100px;
+    color: black;
+}
+
+footer {
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    display:flex;
+    flex-direction: column;
+    color:  rgb(240, 240, 240);
+    font-size: .70em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;  
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+footer a {
+    color:  rgb(240, 240, 240);
+}
+
+@media only screen and (max-width: 1260px) {
+    [class^="bookContent"] {
+        display: block;
+    }
+
+    .topBox {
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 684px) {
+    iframe{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .dropDownButton:hover{
+        background-color: rgb(201, 201, 201);
+        color: black !important
+    }
+
+    header {
+        padding-left: 100px;
+    }
+
+    .topBox {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+    }
+
+    .socialMedia {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+        margin-top: 0.5rem;
+    }
+
+   .bookRecommend {
+       flex-direction: column;
+   }
+
+   [class^="bookBox"] {
+    height: auto ;
+    width: auto;
+   }
+
+   [class^="bookBox"] img {
+        max-height: 100% ;
+        height: auto ;
+        width: 100%;
+    }
+
+    [class^="bookContent"] {
+        height: 0px;
+        transition: width 1.2s, height 1s;
+    }
+
+    [class^="bookBox"]:hover + [class^="bookContent"], [class^="bookContent"]:hover {
+        visibility:visible;
+    }
+    
+    main {
+        grid-column: 1 / -1;
+        margin-top: 0.5rem;
+    }
+
+    footer {
+        grid-row: 5 / 6;
+        margin-top: 0.5rem;
+    }
+
+    body {
+        margin: 0.5%;
+    }
+}
